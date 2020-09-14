@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>summary</title>
+    <h1> The summary of the comments for the video tittled {{ video_title }} are:</h1>
+
+  </head>
+  <body>
+    <div>
+      <iframe width="620" height="415"
+          src={{src_video}}>
+      </iframe>
+        <p>Total number of comments for this video: {{ number_of_comments }}</p>
+        //<p>Summary:</p>
+        <ul>
+            {% for result in results %}
+            <li>{{ result }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+  </body>
+</html>

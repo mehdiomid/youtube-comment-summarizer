@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+
+<title>Mehdi Project</title>
+
+<link rel=stylesheet type=text/css href='{{ url_for('static',filename='style.css')}}'>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+
+
+<div class="page">
+
+  <h1>YouTube Comments Analysis</h1>
+
+  <div class="metanav">
+
+    	
+
+    <h4>
+      Please enter youtube url link.
+    </h4>
+
+    	
+    
+    <form id="input" method="post" action="summary">
+      <p>
+
+    YouTube URL: <input type="text" name="youtube_url">
+
+      </p>
+
+     <p>
+
+    Enter number of desired summary comments<input type="text" name="cluster_number" >
+
+
+      <p>
+
+      </p>
+
+
+    <input type="submit" value="Submit" onclick="$('#loading').show();">
+
+     </p>
+
+    </form>
+
+  	<div id="loading" style="display:none;"><img src="static/images/loading.gif" alt="loading" />Please wait. The comments are loading!</div>
+
+
+   </div>
+
+  {{summaryh}}
+	
+</div>
+
+</html>
