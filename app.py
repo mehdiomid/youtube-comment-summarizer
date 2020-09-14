@@ -24,7 +24,7 @@ def homepage():
 
 @app.route('/summary', methods=['GET', 'POST'])
 def userinfo():
-    APIKEY = 'AIzaSyA_2n3Fe3Ndw0pz-uz5iK4JgxVr1GEEFw4'
+    APIKEY = ''
 
     video_url = request.form['youtube_url']
     cluster_number = request.form['cluster_number']
