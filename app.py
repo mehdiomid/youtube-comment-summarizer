@@ -24,7 +24,7 @@ def homepage():
 
 @app.route('/summary', methods=['GET', 'POST'])
 def userinfo():
-    APIKEY = ''
+    APIKEY = 'AIzaSyA_2n3Fe3Ndw0pz-uz5iK4JgxVr1GEEFw4'
 
     video_url = request.form['youtube_url']
     cluster_number = request.form['cluster_number']
@@ -50,8 +50,11 @@ def userinfo():
         comments = fetch_comments(comment_url=comment_url)
 
         # TODO clean text
+        corpus = []
+        for comment in comments:
+            sentences_in_comment = TextBlob(comment).sentences
+            corpus.extend(list(map(lambda x: x.string, sentences_in_comment)))
 
-        corpus = comments
         embedder = SentenceTransformer('distilbert-base-nli-mean-tokens')
 
         corpus_embeddings = embedder.encode(corpus)
